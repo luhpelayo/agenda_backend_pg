@@ -6,7 +6,7 @@ const router = express.Router();
 // Ruta GET para obtener los usuarios desde la base de datos
 router.get('/', async (req, res) => {
   try {
-    const { rows } = await db.query('SELECT * FROM users');
+    const { rows } = await db.query('SELECT * FROM usuarios');
     res.json(rows);
   } catch (error) {
     console.error('Error al obtener usuarios:', error);

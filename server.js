@@ -1,7 +1,12 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const usersRoutes = require('./api/usersRoutes'); // Importar el módulo usersRoutes.js
-const roles = require('./api/roles');
+const usuariosRoutes = require('./api/usuariosRoutes'); // Importar el módulo usersRoutes.js
+const rolesRoutes = require('./api/rolesRoutes');
+const estadosReservasRoutes = require('./api/estadosReservasRoutes');
+const qrRoutes = require('./api/qrRoutes');
+const agendaRoutes = require('./api/agendaRoutes');
+const turnosRoutes = require('./api/turnosRoutes');
+const tiposEventosRoutes = require('./api/tiposEventosRoutes');
 
 const app = express();
 const port = 3000;
@@ -13,9 +18,15 @@ app.get('/', (req, res) => {
 });
 
 // Usar el módulo usersRoutes como middleware para las rutas relacionadas con usuarios
-app.use('/api/users', usersRoutes);
+app.use('/api/usuarios', usuariosRoutes);
 
-app.use('/api/roles', roles);
+app.use('/api/roles', rolesRoutes);
+app.use('/api/estadosreservas', estadosReservasRoutes);
+app.use('/api/qr', qrRoutes);
+app.use('/api/agenda', agendaRoutes);
+app.use('/api/turnos', turnosRoutes);
+app.use('/api/tiposEventos', tiposEventosRoutes);
+
 
 app.listen(port, () => {
   console.log(`Servidor en ejecución en http://localhost:${port}`);
