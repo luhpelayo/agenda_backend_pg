@@ -1,4 +1,4 @@
-const db = require('./db');
+/*const db = require('./db');
 
 // Crear tabla de usuarios
 async function createUsersTable() {
@@ -21,3 +21,5 @@ async function createUsersTable() {
 
 // Crear la tabla de usuarios
 createUsersTable();
+
+*/

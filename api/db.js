@@ -1,8 +1,8 @@
 require('dotenv').config();
 
-const { Pool } = require('pg');
+const mysql = require('mysql');
 
-const pool = new Pool({
+const pool = mysql.createPool({
   user: process.env.DB_USER,
   host: process.env.DB_HOST,
   database: process.env.DB_NAME,
@@ -18,9 +18,10 @@ module.exports = {
 (async () => {
   try {
     await pool.query('SELECT 1'); // Realizar una consulta de prueba
-    console.log('Conexión exitosa a PostgreSQL');
+    console.log('Conexión exitosa a MySQL');
     // Aquí puedes realizar operaciones con la base de datos
   } catch (error) {
-    console.error('Error al conectarse a PostgreSQL:', error);
+    console.error('Error al conectarse a MySQL:', error);
   }
 })();
+
